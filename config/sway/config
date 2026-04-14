@@ -75,7 +75,7 @@ default_floating_border pixel 1px
 # The border colors:
 
 #                         border    bg        text      ind       child border
-client.focused          #d8cab8 #141216 #d8cab8 #d8cab8 #d8cab8
+client.focused          #77006d #141216 #c337d8 #ff3535 #3d0046
 client.focused_inactive #AC82E9 #141216 #d8cab8 #AC82E9 #AC82E9
 client.unfocused        #AC82E9 #141216 #d8cab8 #AC82E9 #AC82E9
 client.urgent           #fcb167 #141216 #d8cab8 #fcb167 #fcb167
@@ -92,7 +92,7 @@ client.placeholder      #AC82E9 #141216 #d8cab8 #AC82E9 #AC82E9
 # for instance, if you want spanish; or any other.
 # You toggle between the languages with ALT+SHIFT
 input * {
-  xkb_layout "us,se"
+  xkb_layout "us,es"
   xkb_options "grp:alt_shift_toggle"
 }
 
