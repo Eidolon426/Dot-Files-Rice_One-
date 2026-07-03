@@ -85,7 +85,6 @@
  	   "margin": 10,
        "padding": 10,
  	   "spacing": 4,
-       "id": "bar-1",
  	   "modules-center": ["sway/workspaces"],
 	   "modules-right": ["pulseaudio", "backlight", "battery", "clock"],
        "modules-left": ["sway/scratchpad", "tray"],
