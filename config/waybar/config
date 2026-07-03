@@ -5,6 +5,8 @@
     "margin": 10,
     "padding": 10,
     "spacing": 4,
+	"bar_id": "bar-0",
+	"ipc": true,
     "modules-left": ["mpris"],
     "modules-right": ["sway/language", "memory", "cpu", "network", "bluetooth"],
 
