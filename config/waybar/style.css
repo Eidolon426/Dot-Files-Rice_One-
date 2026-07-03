@@ -1,112 +1,257 @@
-* {
-  /* General taskbar font, I like maple mono ^-^*/
-  font-family: Maple Mono;
-  border-radius: 8;
-  font-size: 14px;
-  padding: 0px;
-  background: transparent;
+ * {
+    font-family: 'Pixel Code';
+    border-radius: 10px;
+    font-size: 20px;
+    background: transparent;
+    color: #ff13ff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-shadow: 4px 4px #33003e;
 }
 
 window#waybar {
-  /* Linear gradients are used because it makes less harsh rounded border radius, gtk bug :p */
-  background-image: linear-gradient(to bottom, #141216 100%);
-  border-radius: 14px;
-  padding: 0px;
-  border-style: none;
+    background-color: #33003e;
+    border: 3px solid #7b007b;
 }
 
-#battery,
-#network,
-#clock,
-#custom-applauncher,
-#tray,
+tooltip {
+  background: #33003e;
+  border: 3px solid #ff13ff;
+}
+
 #workspaces,
-#pulseaudio {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-
-  margin: 6px;
-  margin-right: 0px;
-  padding: 4px 8px;
-  border-radius: 8px;
-  color: #d8cab8;
-
-  border-style: none;
-  transition-duration: 120ms;
-}
-
+#tray,
+#scratchpad,
+#mpris,
+#language,
+#backlight,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#bluetooth,
+#network,
 #clock {
-  margin-right: 6px;
+    background-color: #aa005d;
+    color:#ff93ce;
+    margin-right: 10px;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #ff93ce;
 }
-
-#pulseaudio:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
-  transition-duration: 120ms;
-}
-
-#custom-applauncher {
-  font-weight: bold;
-  transition-duration: 120ms;
-}
-#custom-applauncher:hover {
-  background-image: linear-gradient(to bottom, #ac82e9 100%);
-  color: #141216;
-  transition-duration: 120ms;
-}
-
-#tray menu {
-  background-color: #141216;
-  color: #d8cab8;
-  padding: 4px;
-}
-#tray menu menuitem {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-
-  margin: 3px;
-  color: #d8cab8;
-  border-radius: 4px;
-  border-style: solid;
-  border-color: #27232b;
-}
-#tray menu menuitem:hover {
-  background-image: linear-gradient(to bottom, #27232b 100%);
-  color: #ac82e9;
-  font-weight: bold;
-}
-
-#workspaces button {
-  transition-duration: 100ms;
-  all: initial;
-  min-width: 0;
-  font-weight: bold;
-  color: #d8cab8;
-  margin-right: 0.2cm;
-  margin-left: 0.2cm;
-}
-
-#workspaces button:hover {
-  transition-duration: 120ms;
-  color: #8f56e1;
-}
-#workspaces button.focused {
-  color: #ac82e9;
-  font-weight: bold;
-}
-#workspaces button.active {
-  color: #ac82e9;
-  font-weight: bold;
-}
-#workspaces button.urgent {
-  color: #fcb167;
+#clock:hover {
+    background-color: #770c47; 
+    color: #ff93ce;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
 }
 
 #battery {
-  background-color: #222222;
-  color: #1d2021;
+    background-color: #aa007a;
+    color: #fb72d4;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #fb72d4; 
 }
-#battery.warning,
-#battery.critical,
-#battery.urgent {
-  color: #1d2021;
-  background-color: #fc4649;
+#battery.warning {
+    color: #ff8484;
+    border-color: #ff8484;
+    background-color: #640000;
+    font-weight: bold;
+}
+#battery:hover {
+    background-color: #710051;
+    color: #fb72d4;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#backlight {
+    background-color: #aa0091;
+    color:#fe6ee8;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;    
+    border: 2px solid #fe6ee8;
+}
+#backlight:hover {
+    background-color: #6d015d;
+    color: #fe6ee8;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#pulseaudio {
+    background-color: #aa00a7;
+    color: #ff74fd;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #ff74fd; 
+}
+#pulseaudio:hover {
+  background-color: rgb(98, 2, 103);
+  color: #ff74fd;
+  transition-duration: 120ms;
+  text-shadow: 2px 2px #33003e;
+  font-weight: bold;
+}
+
+#bluetooth {
+    background-color: #aa005d;
+    color:#ff93ce;
+    margin-right: 10px;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #ff93ce
+}
+#bluetooth:hover {
+    background-color: #770c47;
+    color: #ff93ce;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;    
+    font-weight: bold;
+}
+
+#network {
+    background-color:#aa007a;
+    color: #fb72d4;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #fb72d4; 
+}
+#network.disconnected {
+    background-color: #640000;
+    color: #ff8484;
+    font-weight: bold;
+}
+#network:hover {
+    background-color: #710051;
+    color: #fb72d4;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#cpu {
+    background-color: #aa0091;
+    color: #ff63ed;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #ff63ed; 
+}
+#cpu:hover {
+    background-color: #762059;
+    color: #ff63ed;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#memory {
+    background-color: #aa00a7;
+    color: #ff74fd;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #ff74fd; 
+}
+#memory:hover {
+    background-color: rgb(98, 2, 103); 
+    color: #ff74fd;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#language {
+    background-color: #9900aa;
+    color:#f16eff;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #f16eff
+}
+#language:hover {
+    background-color: #51005a; 
+    color: #f16eff;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+
+#mpris {
+  background-color: #850085;
+  color: #ff13ff;
+  text-shadow: 2px 2px #33003e;
+  transition: all 0.2s ease 0s;
+  border: 2px solid #ff13ff; 
+}
+#mpris:hover {
+    background-color: #4f004f;
+    color: #ff13ff;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#scratchpad {
+    background-color: #33003e;
+    border: none;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+    color: #ff13ff;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+#tray menu {
+    background-color: #33003e;
+    border: 2px solid #ff13ff;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+#tray menu menuitem {
+    background-color: #600275; 
+    border: 2px solid #ff13ff;
+}
+#tray menu menuitem:hover {
+    background-color: #5d1438;
+    color: #8c0000;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+}
+#tray {
+    background-color: #33003e; 
+    border: none;
+            text-shadow: 2px 2px #33003e;
+}
+
+#workspaces {
+    background-color: #33003e;
+    border: none;
+    font-weight: bold;
+    color: #740864;
+    text-shadow: 2px 2px #33003e;
+}
+#workspaces button {
+    transition-duration: 120ms;
+    all: initial;
+    min-width: 0px;
+    font-weight: bold;
+    color: #740864;
+    margin-right: 0.5cm;
+    margin-left: 0.5cm;
+}
+#workspaces button.focused{
+    color:#740864;
+    font-weight: bold;
+}
+#workspaces button.urgent {
+    color: #640000;
 }
