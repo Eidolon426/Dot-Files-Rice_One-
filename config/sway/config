@@ -1,113 +1,6 @@
-# This is the sway config file made by diinki, as part of a retro futuristic linux rice,
-# made for my "Linux Ricing Guide" video, watch it if you want to learn more about linux
-# and ricing!
-#
-# The license is included in the repo (MIT License)
 
-
-# ===================== BASIC START-UP STUFF ======================
-
-# Set the default font used by sway, I like maple mono.
-font pango:pixel code Regular 18
-
-# Start the auth agent, if you don't use this you can comment out this line.
-#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id sh -c ' eval $(gnome-keyring-daemon --login) eval $(gnome-keyring-daemon --start --components=secrets,ssh) export SSH_AUTH_SOCK'
-# Start the network manager applet, can comment out this line if you don't use network manager.
-exec nm-applet
-
-# =================================================================
-
-
-
-# ===================== MONITORS ==================================
-# enter `swaymsg -t get_outputs` to get your monitor details.
-
-
-# These are simply my details, they **wont** work for you, I've
-# included them to serve as an example.
-output DP-3 pos 1920 0 res 2560x1440@164.835Hz
-output DP-1 pos 0 0 res 1920x1080@60.001Hz
-output HDMI-A-2 pos 4480 0 res 3840x2160@59.997Hz
-# =================================================================
-
-
-#!!!!!!!!!!!!!!!!!!!!!! EDIT THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# ===================== WALLPAPER =================================
-# You can have different wp per monitor by changing the *
-# to the specific display output. Make sure to edit the directory
-# to your wallpaper!
-
-output * bg "/home/simon/Pictures/wallpapers/wallpaper.png" fill
-# =================================================================
-
-
-
-# ===================== APP VARIABLES =============================
-# These are the applications we use, and also where I set the 
-# mod key (in this case it's the super key, i.e the windows key.)
-set $mod Mod4
-set $left h
-set $down j
-set $up k
-set $right l
-set $term kitty
-set $application_launcher pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun
-
-# --- THE FILE EXPLORER! I recommend either nautilus or nemo, personally I think nautilus fits nicely,
-# --- although make sure to install and use my GTK theme, guide on that is in the github README.
-set $file_explorer GTK_THEME=diinki-retro-dark nautilus
-# =================================================================
-
-
-
-# ===================== BORDERS & GAPS ============================
-
-# Gaps between windows
-gaps inner 8px
-gaps outer 4px
-
-# Border width, I prefer THIN borders ^-^
-default_border pixel 1px
-default_floating_border pixel 1px
-
-
-# The border colors:
-
-#                         border    bg        text      ind       child border
-client.focused          #77006d #141216 #c337d8 #ff3535 #3d0046
-client.focused_inactive #AC82E9 #141216 #d8cab8 #AC82E9 #AC82E9
-client.unfocused        #AC82E9 #141216 #d8cab8 #AC82E9 #AC82E9
-client.urgent           #fcb167 #141216 #d8cab8 #fcb167 #fcb167
-client.placeholder      #AC82E9 #141216 #d8cab8 #AC82E9 #AC82E9
-
-# =================================================================
-
-
-
-# ===================== INPUT & KEYBOARD ==========================
-
-# I've included an example for dual keyboard layouts here, english and swedish,
-# as it's what I use. You can add/remove languages, change from "us,se" to "us,es"
-# for instance, if you want spanish; or any other.
-# You toggle between the languages with ALT+SHIFT
-input * {
-  xkb_layout "us,es"
-  xkb_options "grp:alt_shift_toggle"
+  modifier none
 }
-
-# =================================================================
-
-
-
-# ===================== THE INFO/TASKBAR ==========================
-# Simple, this just starts waybar which is what we are using.
-bar {
-  swaybar_command waybar
-}
-# =================================================================
-
-
 
 # ===================== SCREENSHOTS ===============================
 # There's a few different ways to handle screenshots in an
@@ -119,35 +12,38 @@ bar {
 #bindsym $mod+Shift+s exec "QT_QPA_PLATFORM=xcb flameshot gui"
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
-# =================================================================
-
-
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_role="About"] floating enable
+for_window [class="xdg-desktop-portal-kde"] floating enable
+for_window [class="ksysguard"] floating enable
+for_window [class="ksysguard"] sticky enable
+for_window [class="Wine"] floating enable
+for_window [app_id="lutris"] floating enable
 
 # ===================== BASIC KEYBINDS ============================
-# These are the most basic keybinds which are very commonly used, 
-# feel free to change them, the usage/syntax should be easy to
-# understand and edit.
-
-
 bindsym $mod+Return exec $term
 bindsym $mod+e exec $file_explorer
 bindsym $mod+d exec $application_launcher
+bindsym $mod+Shift+w exec firefox
 bindsym $mod+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+space floating toggle
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $mod+Shift+d bar mode toggle
+bindsym F11 fullscreen
 
 floating_modifier $mod normal
 
-# Exit sway command, I add a pop-up so you can't do this on accident, thank me later.
-bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit sway?" -B "Yes, EXIT!" "swaymsg exit" --font="CaskaydiaCove Nerd Font bold 12"
-# ================================================================
-
-
+bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit sway?" -B "Yes, EXIT!" "swaymsg exit" --font="Pixel Code bold 16"
 
 # ===================== OTHER STANDARD BINDINGS ==================
-
-# These are the standard bindings, such as switching workspace, moving windows to different
-# workspaces, etc. Feel free to edit to your liking.
 
 bindsym $mod+f fullscreen
 bindsym $mod+$left focus left
@@ -191,4 +87,22 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+a focus parent
-# ==============================================================
+
+# ===========================Layout==========================
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+x layout toggle split
+bindsym $mod+space focus mode_toggle
+
+# =====================scratchpad======================
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# =========================Gestures====================================
+
+bindgesture swipe:right workspace next_on_output
+bindgesture swipe:left workspace prev_on_output
+bindgesture swipe:up exec $menu
