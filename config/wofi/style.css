@@ -1,72 +1,86 @@
 * {
-  font-family: Maple Mono;
+  font-family: Pixel Code;
   background: transparent;
-  color: #d8cab8;
+  text-shadow: 2px 2px #280131;
+  font-size: 20px;
+  border-radius: 10px;
+  background: transparent;  
+  transition: all 0.2s ease 0s;
+  box-shadow: 300px 300px #7b007b5e;
 }
 
 #window {
-  color: #d8cab8;
-  border-color: #d8cab8;
+  color: #33003e;
+  background-color: #33003e;
+  background-clip: content-box; 
+  border-color: #ff13ff;
   border-style: solid;
-  border-width: 1px;
-
-  /*Linear gradient background instead of standard background, because it makes cleaner border-radius cuts, issa bug :p*/
-  background-image: linear-gradient(to bottom, #141216 100%);
-  border-radius: 14px;
+  border-width: 3px;
+  border-radius: 10px;
 }
 #scroll {
-  border-top-style: solid;
-  border-width: 1px;
-  border-color: #d8cab8;
+  border: #7b007b solid 3px;
+  background-color: #33003e;
+  background-clip: content-box;
+  scrollbar-color: transparent transparent;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-bottom: 35px;
+  margin-top: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 #inner-box {
-  padding-top: 12px;
+  background: #33003e;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #entry {
-  border-style: none;
-  border-color: #d8cab8;
-  color: #d8cab8;
-  padding: 6px;
-  margin-bottom: 8px;
-  margin-left: 12px;
-  margin-right: 12;
-
-  border-radius: 12px;
+  color: #e77dff;
+  background-color: #33003e;
+  border-color: #280131;
+  border-style: solid;
+  border-right-width: 3px;
+  border-left-width: 1.5px;
+  border-top-width: 1.5px;
+  border-bottom-width: 3px;
+  padding: 5px;
+  margin: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
 #entry:selected {
-  background: #27232b;
-  color: #d8cab8;
+  background-color: #4e005f;
+  color: #eea4ff;
+  text-shadow: 2px 2px #33003e;
+  border-color: #7b007b;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 10px;
   font-weight: bold;
   outline: none;
 }
 
 #input {
-  background-color: #141216;
-  color: #d8cab8;
-  border-color: #d8cab8;
-
-  border-style: none;
-  border-bottom-style: solid;
-  border-width: 1px;
-
+  color: #e77dff;
+  background: #33003e;
+  border-color: #660066;
+  border-style: solid;
+  border-width: 3px;
   font-style: normal;
-
-  border-radius: 8;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-
-  padding: 12px;
-  margin: 8px;
+  margin-right: 35px;
+  margin-left: 35px;
+  margin-top: 30px;
+  padding: 15px;
 }
 #input:focus {
-  background: #27232b;
-  background-color: #27232b;
-  border-color: #ac82e9;
-  font-style: italic;
-}
-
-#img {
-  padding: 4px;
-  margin-right: 6px;
+  background: #4e005f;
+  border-color: #7b007b;
+  border-style: solid;
+  border-width: 4px;
+  padding: 15px;
+  font-style: bold;
+  color: #eea4ff;  
+  text-shadow: 2px 2px #33003e;
+  outline: none;
 }
