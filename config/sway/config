@@ -52,6 +52,13 @@ bar {
   modifier none
 }
 
+# ===================== Keyboard ==================================
+
+input * {
+  xkb_layout "us,es"
+  xkb_options "grp:mod_shift_space_toggle"
+}
+
 # ===================== SCREENSHOTS ===============================
 # There's a few different ways to handle screenshots in an
 # easy way, I've decided to use a combination of three apps:
