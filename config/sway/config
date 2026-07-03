@@ -1,4 +1,54 @@
+# ===================== BASIC START-UP STUFF ======================
+font pixel code normal regular 18
+exec nm-applet
 
+# ===================== MONITORS ==================================
+# enter `swaymsg -t get_outputs` to get your monitor details.
+
+output eDP-1 pos 0 0 res 1920x1080@60.001Hz
+output HDMI-A-1 pos 1920 0 res 1920x1080@60.000Hz
+
+# ===================== WALLPAPER =================================
+
+output * bg /home/simonr/Pictures/wallpapers/wptails.png fill
+
+# ===================== APP VARIABLES =============================
+set $mod Mod4
+set $left l
+set $down k
+set $up i
+set $right j
+set $term kitty
+set $application_launcher pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun
+set $file_explorer nemo
+set $menu wofi --show drun
+
+# ===================== Idle lock ==================================
+
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+# ===================== BORDERS & GAPS ============================
+
+gaps inner 20px
+gaps outer 2px
+default_border pixel 3px 
+default_floating_border pixel 3px
+
+#                         border    bg        text      ind       child border
+client.focused          #ff13ff #33003e #ff13ff #ff74ff #ff74ff
+client.focused_inactive #7b007b #280131 #DE99EB #7b007b #7b007b
+client.unfocused        #7b007b #280131 #DE99EB #7b007b #7b007b
+client.urgent           #ff8484 #640000 #ff8484 #ff8484 #ff8484
+client.placeholder      #7b007b #280131 #DE99EB #7b007b #7b007b
+
+# ===================== THE INFO/TASKBAR ==========================
+bar {
+  swaybar_command waybar
+  wrap_scroll yes
   modifier none
 }
 
