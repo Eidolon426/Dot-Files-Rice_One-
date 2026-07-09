@@ -1,86 +1,70 @@
 * {
-  font-family: Pixel Code;
-  background: transparent;
-  text-shadow: 2px 2px #280131;
+  font-family: 'Pixel Code';
   font-size: 20px;
   border-radius: 10px;
-  background: transparent;  
   transition: all 0.2s ease 0s;
-  box-shadow: 300px 300px #7b007b5e;
 }
 
 #window {
-  color: #33003e;
-  background-color: #33003e;
-  background-clip: content-box; 
-  border-color: #ff13ff;
-  border-style: solid;
-  border-width: 3px;
-  border-radius: 10px;
+  background: transparent;
+}
+#window>box {
+  border: 6px solid #ff13ff;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 #scroll {
-  border: #7b007b solid 3px;
-  background-color: #33003e;
-  background-clip: content-box;
-  scrollbar-color: transparent transparent;
-  margin-left: 35px;
-  margin-right: 35px;
-  margin-bottom: 35px;
-  margin-top: 30px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  background: #33003e;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: 3px solid #7b007b;
+  padding: 1px;
 }
 #inner-box {
   background: #33003e;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
 }
+#outer-box {
+  background: #33003e;
+}
+#img {
+  margin-right: 10px;
+  margin-left: 10px;
+}
 #entry {
   color: #e77dff;
-  background-color: #33003e;
   border-color: #280131;
   border-style: solid;
   border-right-width: 3px;
   border-left-width: 1.5px;
   border-top-width: 1.5px;
   border-bottom-width: 3px;
-  padding: 5px;
-  margin: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #entry:selected {
-  background-color: #4e005f;
+  background: #4e005f;
   color: #eea4ff;
-  text-shadow: 2px 2px #33003e;
-  border-color: #7b007b;
-  border-width: 3px;
-  border-style: solid;
-  border-radius: 10px;
+  border: 4px solid #7b007b;
   font-weight: bold;
-  outline: none;
 }
 
 #input {
-  color: #e77dff;
   background: #33003e;
-  border-color: #660066;
-  border-style: solid;
-  border-width: 3px;
-  font-style: normal;
-  margin-right: 35px;
-  margin-left: 35px;
+  color: #e77dff;
+  border: 3px solid #7b007b;
   margin-top: 30px;
   padding: 15px;
 }
 #input:focus {
   background: #4e005f;
-  border-color: #7b007b;
-  border-style: solid;
-  border-width: 4px;
-  padding: 15px;
+  border: 4px solid #7b007b;
   font-style: bold;
   color: #eea4ff;  
-  text-shadow: 2px 2px #33003e;
   outline: none;
 }
