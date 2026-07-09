@@ -1,19 +1,18 @@
  * {
     font-family: 'Pixel Code';
-    border-radius: 10px;
     font-size: 20px;
-    background: transparent;
+    border-radius: 10px;
+    background: #33003e;
     color: #ff13ff;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-shadow: 4px 4px #33003e;
+    transition-duration: 0.5s;
 }
 
 window#waybar {
-    background-color: #33003e;
+    background: transparent;
+}
+window#waybar>box {
     border: 3px solid #7b007b;
+    padding: 10px;
 }
 
 tooltip {
@@ -24,6 +23,8 @@ tooltip {
 #workspaces,
 #tray,
 #scratchpad,
+#custom-notification,
+#idle_inhibitor,
 #mpris,
 #language,
 #backlight,
@@ -36,13 +37,13 @@ tooltip {
 #clock {
     background-color: #aa005d;
     color:#ff93ce;
-    margin-right: 10px;
     text-shadow: 2px 2px #33003e;
     transition: all 0.2s ease 0s;
     border: 2px solid #ff93ce;
+    padding: 10px;
 }
 #clock:hover {
-    background-color: #770c47; 
+    background-color: #770c47;
     color: #ff93ce;
     transition-duration: 120ms;
     text-shadow: 2px 2px #33003e;
@@ -103,10 +104,9 @@ tooltip {
 #bluetooth {
     background-color: #aa005d;
     color:#ff93ce;
-    margin-right: 10px;
     text-shadow: 2px 2px #33003e;
     transition: all 0.2s ease 0s;
-    border: 2px solid #ff93ce
+    border: 2px solid #ff93ce;
 }
 #bluetooth:hover {
     background-color: #770c47;
@@ -197,24 +197,37 @@ tooltip {
     font-weight: bold;
 }
 
+#custom-notification {
+    background-color: #33003e;
+    color: #ff13ff;
+    text-shadow: 2px 2px #33003e;
+    border: none;
+}
 #scratchpad {
     background-color: #33003e;
     border: none;
     text-shadow: 2px 2px #33003e;
     font-weight: bold;
     color: #ff13ff;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-left: 2px;
-    margin-right: 2px;
 }
+
+#idle_inhibitor {
+    background-color: #9c00aa;
+    text-shadow: 2px 2px #33003e;
+    transition: all 0.2s ease 0s;
+    border: 2px solid #f678ff;
+    color: #f678ff;
+}
+#idle_inhibitor:hover {
+    background-color: #56005e;
+    transition-duration: 120ms;
+    text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
 #tray menu {
     background-color: #33003e;
     border: 2px solid #ff13ff;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    margin-left: 2px;
-    margin-right: 2px;
 }
 #tray menu menuitem {
     background-color: #600275; 
@@ -229,7 +242,7 @@ tooltip {
 #tray {
     background-color: #33003e; 
     border: none;
-            text-shadow: 2px 2px #33003e;
+    text-shadow: 2px 2px #33003e;
 }
 
 #workspaces {
@@ -237,20 +250,20 @@ tooltip {
     border: none;
     font-weight: bold;
     color: #740864;
-    text-shadow: 2px 2px #33003e;
 }
 #workspaces button {
     transition-duration: 120ms;
     all: initial;
-    min-width: 0px;
     font-weight: bold;
     color: #740864;
-    margin-right: 0.5cm;
-    margin-left: 0.5cm;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: 2px 2px #120016;
 }
 #workspaces button.focused{
     color:#740864;
     font-weight: bold;
+    text-shadow: 3px 3px #120016;
 }
 #workspaces button.urgent {
     color: #640000;
