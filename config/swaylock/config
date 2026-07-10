@@ -1,0 +1,43 @@
+# Basic setup
+font=pixel code
+font-size=40
+daemonize
+hide-keyboard-layout
+ignore-empty-password
+
+# Background color
+color=2d002d
+
+# Text color
+text-clear-color=00ff00
+text-color=ff13ff
+text-caps-lock-color=550000
+text-ver-color=ff13ff
+text-wrong-color=c70000
+
+# Highlight segments
+bs-hl-color=ff74ff
+key-hl-color=ff74ff
+
+# Highlight segments Sperator
+separator-color=00000000
+
+# Inside the indicator
+inside-color=280131
+inside-ver-color=280131
+inside-wrong-color=280131
+inside-clear-color=280131
+
+# Line between inside and ring
+line-color=33003e
+line-ver-color=33003e
+line-clear-color=00ff00
+line-wrong-color=550000
+
+# Indicator ring
+indicator-radius=200
+indicator-thickness=20
+ring-color=7b007b
+ring-ver-color=7b007b
+ring-wrong-color=550000
+ring-clear-color=00ff00
