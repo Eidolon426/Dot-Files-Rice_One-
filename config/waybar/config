@@ -1,76 +1,4 @@
 [
-   {
-    "layer": "bottom",
-    "position": "bottom",
-    "margin-left": 20,
-    "margin-right": 20,
-    "margin-bottom": 20,
-    "spacing": 15,
-    "id": "bar-0",
-    "ipc": true,
-    "modules-left": ["mpris"],
-    "modules-right": ["sway/language", "memory", "cpu", "network", "bluetooth"],
-
-    "cpu": {
-        "format": "CPU {usage}%",
-	    "format-alt": "{load}% Load",
-        "tooltip": false,
-        "interval": 30,
-        "on-click-right": "kitty -e btop",
-    },
-    "memory": {
-        "format": "Memory {}%",
-	    "format-alt": "♥︎ RAM: {used:0.1f}GiB/{total:0.1f}GiB ({percentage}%) ♥︎
-♥︎ SWAP: {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB ({swapPercentage}%) ♥︎",
-        "interval": 30,
-        "justify": "center",
-        "tooltip": false
-    },
-    "network": {
-        "format-wifi": "  {}",
-    	"format-alt": "  ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
-        "format-disconnected": "󰤮 No Network",
-        "tooltip": false,
-        "interval": 5
-    },
-    "bluetooth":{
-        "format": "ᚼᛒ {status}",
-        "format-connected": "ᚼᛒ {device_alias} {icon} {device_battery_percentage}%",
-	    "format-icons": [
-	        "󱊡",
-            "󱊢",
-            "󱊣"],
-	    "format-disabled": "",
-	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	    "on-click-right": "Bluetooth_Manager -e",
-    },
-    "mpris": {
- 	    "format": "  ♥︎ {dynamic} ♥︎ 
- {title}
- ・・・・ {status_icon} ・・・・ ",
-        "dynamic-order": ["artist", "album"],
-        "dynamic-separator": " ♥︎ ",
-        "dynamic-importance-order": ["artist", "album"],
-        "artist-len": 20,
-        "album-len": 20,
-        "title-len": 100,
-        "elipses": "...",
-        "justify": "center",
-        "interval": 1,
-	    "status-icons": {
-		    "playing": "▶",
-		    "paused": "⏸"},
-        "ignored-players": ["firefox"]
-    },
-    "sway/language": {
-		"format": "  {}",
-		"min-length": 5,
-		"on-click": "swaymsg 'input * xkb_switch_layout next'",
-    	"tooltip": false,
-	},
-   },
-   // ------------------------------------------------------------------------------ //
     {
 	 "layer": "bottom",
  	   "position": "top",
@@ -184,4 +112,76 @@
         "escape": true
 },
 }
+ // ------------------------------------------------------------------------------ //
+ {
+    "layer": "bottom",
+    "position": "bottom",
+    "margin-left": 20,
+    "margin-right": 20,
+    "margin-bottom": 20,
+    "spacing": 15,
+    "id": "bar-0",
+    "ipc": true,
+    "modules-left": ["mpris"],
+    "modules-right": ["sway/language", "memory", "cpu", "network", "bluetooth"],
+
+    "cpu": {
+        "format": "CPU {usage}%",
+	    "format-alt": "{load}% Load",
+        "tooltip": false,
+        "interval": 30,
+        "on-click-right": "kitty -e btop",
+    },
+    "memory": {
+        "format": "Memory {}%",
+	    "format-alt": "♥︎ RAM: {used:0.1f}GiB/{total:0.1f}GiB ({percentage}%) ♥︎
+♥︎ SWAP: {swapUsed:0.1f}GiB/{swapTotal:0.1f}GiB ({swapPercentage}%) ♥︎",
+        "interval": 30,
+        "justify": "center",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "  {}",
+    	"format-alt": "  ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+        "format-disconnected": "󰤮 No Network",
+        "tooltip": false,
+        "interval": 5
+    },
+    "bluetooth":{
+        "format": "ᚼᛒ {status}",
+        "format-connected": "ᚼᛒ {device_alias} {icon} {device_battery_percentage}%",
+	    "format-icons": [
+	        "󱊡",
+            "󱊢",
+            "󱊣"],
+	    "format-disabled": "",
+	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	    "on-click-right": "Bluetooth_Manager -e",
+    },
+    "mpris": {
+ 	    "format": "  ♥︎ {dynamic} ♥︎ 
+ {title}
+ ・・・・ {status_icon} ・・・・ ",
+        "dynamic-order": ["artist", "album"],
+        "dynamic-separator": " ♥︎ ",
+        "dynamic-importance-order": ["artist", "album"],
+        "artist-len": 20,
+        "album-len": 20,
+        "title-len": 100,
+        "elipses": "...",
+        "justify": "center",
+        "interval": 1,
+	    "status-icons": {
+		    "playing": "▶",
+		    "paused": "⏸"},
+        "ignored-players": ["firefox"]
+    },
+    "sway/language": {
+		"format": "  {}",
+		"min-length": 5,
+		"on-click": "swaymsg 'input * xkb_switch_layout next'",
+    	"tooltip": false,
+	},
+   },
 ]
