@@ -34,13 +34,12 @@ bindsym F11 fullscreen
 bindsym $mod+n exec swaync-client -t -sw
 
 # ===================== IDLE LOCK ==================================
-bindsym $mod+Shift+l exec swaylock --color=#7b007b
+bindsym $mod+Shift+l exec swaylock -C /home/simonr/.config/swayidle/config
 
 exec swayidle -w \
-   timeout 300 'swaylock -f' \
-   timeout 300 'swaymsg "output * power off"' \
-       resume 'swaymsg "output * power on"' \
-       before-sleep 'swaylock -f'
+   timeout 300 'swaylock -C /home/simonr/.config/swayidle/config' \
+   timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+   before-sleep 'swaylock -C /home/simonr/.config/swayidle/config'
 
 # ===================== EXIT SWAY =======================================
 bindsym $mod+Shift+e exec swaynag -t warning -m "Are you sure you want to exit sway?" -B "Yes, EXIT!" "swaymsg exit" --font="Pixel Code bold 30" --background=#640000 --border=#ff0000 --border-bottom=#ff0000 --text=#ff13ff --button-text=#ff13ff --button-background=#550000 --layer=overlay --button-gap=30 --button-border-size=10 --border-bottom-size=10 --message-padding=10
