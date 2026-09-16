@@ -13,6 +13,7 @@ window#waybar {
 window#waybar>box {
     border: 3px solid #7b007b;
     padding: 10px;
+    box-shadow: inset 1px 1px 6px 3px #620062;
 }
 
 tooltip {
@@ -224,25 +225,31 @@ tooltip {
     text-shadow: 2px 2px #33003e;
     font-weight: bold;
 }
-
-#tray menu {
-    background-color: #33003e;
-    border: 2px solid #ff13ff;
-}
-#tray menu menuitem {
-    background-color: #600275; 
-    border: 2px solid #ff13ff;
-}
-#tray menu menuitem:hover {
-    background-color: #5d1438;
-    color: #8c0000;
+#idle_inhibitor.activated {
+    background-color: #56005e;
+    color: #00ff00;
+    border: 2px solid #00ff00;
     transition-duration: 120ms;
     text-shadow: 2px 2px #33003e;
+    font-weight: bold;
+}
+
+#tray menu {
+    background-color: #2d002d;
+    border: 2px solid #ff13ff;
+    padding: 4px;
+}
+#tray menu menuitem {
+    border: 2px solid #ff13ff;
+    margin: 4px;
+    padding: 4px;
+}
+#tray menu menuitem:hover {
+    background-color: #7b007b;
 }
 #tray {
-    background-color: #33003e; 
+    background-color: #33003e;
     border: none;
-    text-shadow: 2px 2px #33003e;
 }
 
 #workspaces {
@@ -252,7 +259,6 @@ tooltip {
     color: #740864;
 }
 #workspaces button {
-    transition-duration: 120ms;
     all: initial;
     font-weight: bold;
     color: #740864;
