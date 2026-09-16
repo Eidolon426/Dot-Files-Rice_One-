@@ -1,6 +1,7 @@
 # ===================== BASIC START-UP STUFF ======================
 font pixel code normal regular 18
 exec_always swaync
+exec_always xrandr --output $(xrandr | grep -m 1 XWAYLAND | awk '{print $1;}') --primary
 
 # ===================== MONITORS ==================================
 # enter `swaymsg -t get_outputs` to get your monitor details.
@@ -19,6 +20,7 @@ set $term kitty
 set $application_launcher pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun
 set $file_explorer nemo
 set $menu wofi --show drun
+set $media audacious
 
 # ===================== BASIC KEYBINDS ============================
 bindsym $mod+Return exec $term
@@ -32,6 +34,7 @@ bindsym $mod+space floating toggle
 bindsym $mod+h bar mode toggle
 bindsym F11 fullscreen
 bindsym $mod+n exec swaync-client -t -sw
+bindsym $mod+m exec $media
 
 # ===================== IDLE LOCK ==================================
 bindsym $mod+Shift+l exec swaylock -C /home/simonr/.config/swaylock/config
@@ -69,6 +72,9 @@ input * {
   xkb_layout "us,es"
   xkb_options "grp:alt_shift_toggle"
   }
+
+# ===================== Cursor ====================================
+seat seat0 xcursor_theme cursor1 32
 
 # ===================== SCREENSHOTS ===============================
 # There's a few different ways to handle screenshots in an
