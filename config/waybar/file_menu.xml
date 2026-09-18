@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="Simons Library">
+                <property name="label">Simons Library</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Downloads">
+                <property name="label">Downloads</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Home">
+                <property name="label">Home</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Root">
+                <property name="label">Root</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Config">
+                <property name="label">Config</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Local">
+                <property name="label">Local</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Waybar">
+                <property name="label">Waybar</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Sway">
+                <property name="label">Sway</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+        </child>
+    </object>
+</interface>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="Steam">
+                <property name="label">Steam</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Audacious">
+                <property name="label">Audacious</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Tor">
+                <property name="label">Tor</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Kate">
+                <property name="label">Kate</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Nicotine">
+                <property name="label">Nicotine</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Zotero">
+                <property name="label">Zotero</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkSeparatorMenuItem" id="delimiter1"/>
+        </child>
+    </object>
+</interface>
