@@ -161,8 +161,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
 # ===================== SCRATCHPAD ======================
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus move scratchpad
+bindsym $mod+Shift+minus scratchpad show
 
 # ========================= GESTURES ===================
 
