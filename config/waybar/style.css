@@ -4,7 +4,7 @@
     border-radius: 10px;
     background: #33003e;
     color: #ff13ff;
-    transition-duration: 0.5s;
+    transition-duration: 0.3s;
 }
 
 window#waybar {
@@ -13,7 +13,6 @@ window#waybar {
 window#waybar>box {
     border: 3px solid #7b007b;
     padding: 10px;
-    box-shadow: inset 1px 1px 6px 3px #620062;
 }
 
 tooltip {
@@ -25,6 +24,9 @@ tooltip {
 #tray,
 #scratchpad,
 #custom-notification,
+#custom-file,
+#custom-power,
+#custom-apps,
 #idle_inhibitor,
 #mpris,
 #language,
@@ -197,13 +199,44 @@ tooltip {
     text-shadow: 2px 2px #33003e;
     font-weight: bold;
 }
+#mpris.paused {
+    color: #ef0000;
+    font-weight: bold;
+    border-color: #ef0000;
+    background-color: #4f004f;
+}
 
 #custom-notification {
     background-color: #33003e;
     color: #ff13ff;
     text-shadow: 2px 2px #33003e;
     border: none;
+    font-weight: bold;
+    font-size: 25px;
 }
+
+#custom-apps {
+    background-color: #33003e;
+    color: #ff13ff;
+    text-shadow: 2px 2px #33003e;
+    border: none;
+}
+
+#custom-file {
+    background-color: #33003e;
+    color: #ff13ff;
+    text-shadow: 2px 2px #33003e;
+    border: none;
+}
+
+#custom-power {
+    background-color: #33003e;
+    color: #ff13ff;
+    text-shadow: 2px 2px #33003e;
+    border: none;
+    font-size: 30;
+}
+
 #scratchpad {
     background-color: #33003e;
     border: none;
@@ -243,12 +276,14 @@ tooltip {
     border: 2px solid #ff13ff;
     margin: 4px;
     padding: 4px;
+    opacity: .85;
 }
 #tray menu menuitem:hover {
-    background-color: #7b007b;
+    opacity: 100;
+    font-weight: bold;
 }
 #tray {
-    background-color: #33003e;
+    background-color: transparent;
     border: none;
 }
 
