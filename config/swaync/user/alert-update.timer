@@ -1,0 +1,13 @@
+Description=Check update status every few minutes
+# Set `Requires` to the name of the battery alert service
+Requires=alert-update.service
+
+# Define when and how the timer activates
+[Timer]
+# Start 1 minute after boot...
+OnBootSec=1m
+# ...and again every 5 minutes after `alert-battery.service` runs
+OnUnitActiveSec=1h
+
+[Install]
+WantedBy=timers.target

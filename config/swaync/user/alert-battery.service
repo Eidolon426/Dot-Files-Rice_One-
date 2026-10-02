@@ -1,0 +1,11 @@
+[Unit]
+Description=Desktop alert warning of low remaining battery
+
+[Service]
+Type=oneshot
+# Change username and modify path to script as needed
+ExecStart=/home/simonr/.config/swaync/scripts/battery-status-sh
+
+
+[Install]
+WantedBy=graphical.target
