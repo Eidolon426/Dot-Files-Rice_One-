@@ -9,7 +9,7 @@
  	   "spacing": 15,
  	   "modules-center": ["sway/workspaces"],
 	   "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "clock"],
-       "modules-left": ["custom/power", "custom/apps", "custom/file", "custom/notification", "sway/scratchpad", "tray",],
+       "modules-left": ["custom/power", "custom/file", "custom/notification", "sway/scratchpad", "tray",],
 
 	 "sway/window": {
           "format": "{}",
@@ -113,10 +113,11 @@
             "Reboot": "reboot",
             "Log Out": "swaymsg exit",
             "Suspend": "systemctl suspend",
+            "Update": "exec $HOME/.config/waybar/updates.sh"
         },
     },
     "custom/file": {
-        "format": "⎙",
+        "format": "☰",
         "min-length": 1,
         "tooltip": false,
         "justify": "center",
@@ -131,21 +132,9 @@
             "Local": "nemo /$HOME/.local",
             "Waybar": "nemo /$HOME/.config/waybar",
             "Sway": "nemo /$HOME/.config/sway",
-        },
-    },
-    "custom/apps": {
-        "tooltip": false,
-        "justify": "center",
-        "format": "☰",
-        "menu-file": "$HOME/.config/waybar/app_menu.xml",
-        "menu": "on-click",
-        "menu-actions": {
-            "Steam": "steam",
-            "Audacious": "audacious",
-            "Tor": "tor browser",
-            "Kate": "kate",
-            "Nicotine": "nicotine",
-            "Zotero": "zotero",
+            "Waybar Config": "kate /$HOME/.config/waybar/config",
+            "Sway Config": "kate /$HOME/.config/sway/config",
+            "Update": "kate /$HOME/.local/logs/updates.txt"
         },
     },
     "custom/notification": {
