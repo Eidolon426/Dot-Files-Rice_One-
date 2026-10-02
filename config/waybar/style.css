@@ -26,7 +26,6 @@ tooltip {
 #custom-notification,
 #custom-file,
 #custom-power,
-#custom-apps,
 #idle_inhibitor,
 #mpris,
 #language,
@@ -213,13 +212,6 @@ tooltip {
     border: none;
     font-weight: bold;
     font-size: 25px;
-}
-
-#custom-apps {
-    background-color: #33003e;
-    color: #ff13ff;
-    text-shadow: 2px 2px #33003e;
-    border: none;
 }
 
 #custom-file {
