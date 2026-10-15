@@ -1,0 +1,35 @@
+#! /bin/bash
+
+DIR="$HOME/Pictures/Screenshots/"
+mkdir -p "$DIR"
+FILE="$DIR/$(date +%Y-%m-%d-%Hh%Mm%Ss).png"
+WINDOW=$(swaymsg -t get_tree | jq -r '.. | select(.focused? and .type == "con") | .rect | "\(.x),\(.y) \(.width)x\(.height)"')
+
+case "$1" in
+	full)
+		grim "$FILE"
+		;;
+	area)
+		AREA=$(slurp -w 0) || exit 0
+		grim -g "$AREA" "$FILE"
+		;;
+	window)
+		grim -g "$WINDOW" "$FILE"
+		;;
+	full-clipboard)
+		grim - | wl-copy
+		;;
+	area-clipboard)
+		AREA=$(slurp -w 0) || exit 0
+                grim -g "$AREA" - | wl-copy
+                ;;
+        window-clipboard)
+                grim -g "$WINDOW" - | wl-copy
+                ;;
+	*)
+		echo "Usage: $(basename "$0") full|area|window|full-clipboard|area-clipboard|window-clipboard" >&2
+		exit 1
+		;;
+esac
+notify-send -u normal "screenshot taken"
+nemo "$HOME/Pictures/Screenshots/"
