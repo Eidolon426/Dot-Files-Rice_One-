@@ -1,57 +1,185 @@
-{
-/*swaync-client --reload-css, swaync-client --reload-config, notify-send -u "message"*/
-  "$schema": "/etc/xdg/swaync/configSchema.json",
-  "positionX": "right",
-  "positionY": "top",
-  "layer": "overlay",
-  "control-center-layer": "overlay",
-  "control-center-positionX": "center",
-  "control-center-positionY": "top",
-  "layer-shell": true,
-  "cssPriority": "user",
-  "control-center-width": 780,
-  "control-center-margin-top": 10,
-  "control-center-margin-bottom": 10,
-  "control-center-margin-right": 0,
-  "control-center-margin-left": 0,
-  "notification-2fa-action": true,
-  "notification-inline-replies": false,
-  "notification-window-width": 300,
-  "notification-icon-size": 100,
-  "notification-body-image-height": 100,
-  "notification-body-image-width": 100,
-  "notification-window-preferred-output": "eDP-1",
-  "timeout": 8,
-  "timeout-low": 4,
-  "timeout-critical": 8,
-  "fit-to-screen": true,
-  "keyboard-shortcuts": true,
-  "image-visibility": "when-available",
-  "transition-time": 150,
-  "hide-on-clear": true,
-  "hide-on-action": true,
-  "script-fail-notify": true,
-  "scripts": {
-    "sound-script": {
-      "exec": "paplay /usr/share/sounds/freedesktop/stereo/complete.oga",
-      "app-name": "firefox"
-    }
-  },
-  "widgets": [
-    "title",
-    "notifications",
-    "mpris"
-  ],
-  "widget-config": {
-    "title": {
-      "text": "Notifications",
-      "clear-all-button": true,
-      "button-text": "Clear"
-    },
-    "mpris": {
-      "image-size": 50,
-      "image-radius": 60,
-      "loop-carousel": false
-    }
-  }
+* {
+  font-family: Pixel Code;
+  font-size: 20px;
+  transition: 0.3s ease all;
+  padding: 2px;
+  border-radius: 10px;
+  text-shadow: 2px 2px #33003e;
+  color: #ff13ff;
+  outline: none;
+  box-shadow: none;
+}
+ /*swaync-client --reload-css, swaync-client --reload-config, notify-send -u "message"*/
+
+ /* ----------------------------- Control Center Container -------------------------------- */
+ .control-center {
+   margin: 10px;
+   background-color: #2d002d;
+   border: 6px solid #ff13ff;
+   box-shadow: 2px 2px 6px 3px #2d002d;
+   min-width: 780px;
+ }
+ .close-button {
+   background: #550000;
+   padding: 0;
+   min-width: 24px;
+   min-height: 24px;
+   margin-top: 5px;
+   margin-right: 5px;
+   border: 3px solid #ff13ff;
+ }
+ .close-button:hover {
+   background: #d10000;
+ }
+ /* ----------------------------- Widgets ------------------------------------------------- */
+.widget-mpris,
+ .control-center-list > box > *:not(.widget-title) {
+   background-color: #2d002d;
+   padding: 18px;
+   margin-bottom: 14px;
+   border: none;
+ }
+ .control-center > box > *:last-child { margin-bottom: 0;
+}
+
+ /* Widget Titles */
+ .widget-title {
+   background: #2d002d;
+   font-weight: bold;
+   border: none;
+   padding: 4px 6px 12px 6px;
+   margin-bottom: 8px;
+ }
+ .widget-title label {
+   margin-left: 4px;
+   background: transparent;
+ }
+ .widget-title button {
+   background-color: #2d002d;
+   border: none;
+   padding: 7px 16px;
+ }
+/* --------------------------- MPRIS Widget --------------------------------------------- */
+.widget-mpris {
+  border: none;
+  background: transparent;
+}
+.widget-mpris .widget-mpris-player {
+  background-color: transparent;
+  border: 3px solid #ff13ff;
+  box-shadow: none;
+}
+.widget-mpris .widget-mpris-album-art {
+  background: #7b007b;
+  border: 3px solid #ff13ff;
+  border-radius: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.widget-mpris .widget-mpris-title {
+  margin-bottom: 4px;
+  background: transparent;
+}
+.widget-mpris .widget-mpris-subtitle {
+  background: transparent;
+}
+.widget-mpris .widget-mpris-player button {
+  all: unset;
+  background: transparent;
+  padding: 7px;
+  min-width: 20px;
+  min-height: 20px;
+}
+.widget-mpris .widget-mpris-player button:hover {
+  background-color: transparent;
+}
+
+ /* ----------------------------- Control Center ------------------------------------------ */
+.control-center .notification image {
+  margin-right: 12px;
+  min-width: 36px;
+  min-height: 36px;
+}
+.notification-group {
+  background-color: transparent;
+  border: none;
+}
+.notification-group.collapsed .notification-row:not(:last-child) .notification-action,
+.notification-group.collapsed .notification-row:not(:last-child) .notification-default-action {
+  opacity: 0;
+}
+.notification-group.collapsed:hover .notification-row:not(:only-child) .notification {
+  background-color: #620062;
+}
+.notification-group.collapsed:hover .notification-row:not(:only-child) .notification.critical {
+  background-color: #cb0000;
+}
+.notification-group-collapse-button {
+  background: #2d002d;
+  border: 3px solid #ff13ff;
+}
+.notification-group-close-all-button {
+  background: #550000;
+  border: 3px solid #ff13ff;
+}
+.notification-group-collapse-button:hover {
+  background: #7b007b;
+}
+.notification-group-close-all-button:hover {
+  background: #cb0000;
+}
+/* ----------------------------- Notifications ------------------------------------------ */
+.floating-notifications .notification-row {
+  margin-bottom: 12px;
+  min-width: 400px;
+}
+.floating-notifications .notification-background {
+  border: none;
+  background: transparent;
+}
+.floating-notifications .notification image {
+  min-width: 100px;
+  min-height: 100px;
+  margin-right: 14px;
+}
+.notification.critical {
+  background-color: #550000;
+  box-shadow: 1px 1px 6px 3px #2d002d;
+}
+.notification.critical:hover {
+  background-color: #cb0000;
+  box-shadow: inset 1px 1px 6px #2d002d;
+}
+.notification.normal {
+  background-color: #2d002d;
+  border: 6px solid #7b007b;
+  box-shadow: 1px 1px 6px 3px #340034;
+}
+.notification.normal:hover {
+  background-color: #190019;
+  box-shadow: inset 1px 1px 6px #640064;
+}
+.notification {
+  background: #7b007b;
+  border: 6px solid #ff13ff;
+    box-shadow: 1px 1px 6px 3px #2d002d;
+}
+.notification:hover {
+  background-color: #620062;
+  box-shadow: inset 1px 1px 6px #2d002d;
+}
+.notification-action {
+  background: #2d002d;
+  border: 2px solid #ff13ff;
+}
+.notification-action:hover {
+  background: #620062;
+}
+.notification-default-action,
+.notification-default-action:hover {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
 }
