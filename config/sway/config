@@ -23,18 +23,23 @@ set $menu wofi --show drun
 set $media audacious
 
 # ===================== BASIC KEYBINDS ============================
+set $refresh reload; swaync-client --reload-css, swaync-client --reload-config
+
 bindsym $mod+Return exec $term
 bindsym $mod+e exec $file_explorer
 bindsym $mod+d exec $application_launcher
 bindsym $mod+w exec firefox
+bindsym $mod+z exec zotero
+bindsym $mod+k exec kate
+bindsym $mod+s exec steam
+bindsym $mod+a exec audacious
 bindsym $mod+r exec '/usr/bin/libreoffice --writer'
 bindsym $mod+q kill
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c $refresh
 bindsym $mod+space floating toggle
 bindsym $mod+h bar mode toggle
 bindsym F11 fullscreen
 bindsym $mod+n exec swaync-client -t -sw
-bindsym $mod+m exec $media
 
 # ===================== IDLE LOCK ==================================
 bindsym $mod+Shift+l exec swaylock -C /home/simonr/.config/swaylock/config
@@ -64,7 +69,9 @@ client.placeholder      #7b007b #280131 #DE99EB #7b007b #7b007b
 bar {
   swaybar_command waybar
   wrap_scroll yes
-  modifier none
+  modifier Mod4
+  mode dock
+  hidden_state hide
 }
 
 # ===================== KEYBOARD ==================================
@@ -77,12 +84,7 @@ input * {
 seat seat0 xcursor_theme cursor1 32
 
 # ===================== SCREENSHOTS ===============================
-# There's a few different ways to handle screenshots in an
-# easy way, I've decided to use a combination of three apps:
-# grim, slurp, and swappy. Feel free to use a different screenshot
-# solution.
 
-#bindsym $mod+Shift+s exec "QT_QPA_PLATFORM=xcb flameshot gui"
 bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
 # ======================= POP-UPS ================================
@@ -99,25 +101,39 @@ for_window [class="ksysguard"] sticky enable
 
 # =================== RESIZING AND FLOATING ==========================
 mode "resize" {
-    bindsym Left resize shrink width 10px
-    bindsym Down resize shrink height 10px
-    bindsym Up resize grow height 10px
-    bindsym Right resize grow width 10px
+    # Commands
+    bindsym $mod+f floating toggle
+    bindsym Left resize grow left 20px
+    bindsym Down resize grow down 20px
+    bindsym Up resize grow up 20px
+    bindsym Right resize grow right 20px
+    bindsym $mod+Left resize shrink right 20px
+    bindsym $mod+Down resize shrink up 20px
+    bindsym $mod+Up resize shrink down 20px
+    bindsym $mod+Right resize shrink left 20px
+
+    bindsym $mod+Shift+c mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"; $refresh
 
     # Return to default mode
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
+    bindsym $mod+m mode "default"; floating disable; exec notify-send -u low "Default mode enabled"
+    bindsym Return mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
+    bindsym $mod+Return mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
+    bindsym Escape mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
 }
-bindsym $mod+Shift+r mode "resize"
+bindsym $mod+m mode "resize"; floating toggle; exec notify-send -u normal "Resize mode enabled"
+bindsym $mod+Shift+f floating toggle
 
 # modifier for moving floating windows
 floating_modifier $mod normal
+focus_wrapping workspace
 
 # ======================= AUDIO & Brightness ===================================
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-
+bindsym $mod+XF86MonBrightnessUp exec brightnessctl -d tpacpi::kbd_backlight s 1+
+bindsym $mod+XF86MonBrightnessDown exec brightnessctl -d tpacpi::kbd_backlight s 1-
 bindsym XF86MonBrightnessUp exec brightnessctl s 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 
@@ -133,8 +149,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-bindsym $mod+b splith
-bindsym $mod+v splitv
 
 # Switch the monitor to a specific workspace.
 bindsym $mod+1 workspace number 1
