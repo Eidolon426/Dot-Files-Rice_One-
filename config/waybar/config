@@ -2,11 +2,14 @@
     {
 	 "layer": "bottom",
  	   "position": "top",
- 	   "margin-top": 20,
+ 	   "margin-top": 10,
  	   "margin-left": 20,
  	   "margin-right": 20,
- 	   "id": "bar-1",
- 	   "spacing": 15,
+ 	   "id": "bar-0",
+ 	   "exclusive": false,
+ 	   "ipc": true,
+ 	   "mode": "show",
+ 	   "spacing": 10,
  	   "modules-center": ["sway/workspaces"],
 	   "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "clock"],
        "modules-left": ["custom/power", "custom/file", "custom/notification", "sway/scratchpad", "tray",],
@@ -84,10 +87,11 @@
             "󱊣"]
      },
      "backlight": {
+        "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip": false,
-	    "scroll-step": 3,
+        "scroll-step": 3,
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -99,7 +103,7 @@
         "expand": true,
         "show-passive-items": true,
         "icon-size": 20,
-        "spacing": 25,
+        "spacing": 26,
     },
     "custom/power": {
         "format": " ⏻",
@@ -113,7 +117,7 @@
             "Reboot": "reboot",
             "Log Out": "swaymsg exit",
             "Suspend": "systemctl suspend",
-            "Update": "exec $HOME/.config/waybar/updates.sh"
+            "Update": "kitty sudo /$HOME/.config/waybar/updates.sh"
         },
     },
     "custom/file": {
@@ -161,17 +165,18 @@
 },
 // ------------------------------------------------------------------------------ //
     {
-    "layer": "top",
+    "layer": "overlay",
     "position": "bottom",
     "margin-left": 20,
     "margin-right": 20,
-    "margin-bottom": 20,
-    "spacing": 15,
+    "margin-bottom": 10,
+    "spacing": 10,
     "id": "bar-0",
-    "exclusive": true,
+    "mode": "hide",
     "ipc": true,
+    "exclusive": false,
     "modules-left": ["mpris"],
-    "modules-right": ["sway/language", "memory", "cpu", "network", "bluetooth"],
+    "modules-right": ["sway/language", "temperature", "memory", "cpu", "network", "bluetooth"],
 
     "cpu": {
         "format": "CPU {usage}%",
@@ -185,6 +190,12 @@
         "interval": 30,
         "justify": "center",
         "tooltip": false
+    },
+    "temperature": {
+        "thermal-zone": 2,
+        "format": "{temperatureF}°F {icon}",
+        "format-icons": ["󰉬", "", "󰉪"],
+        "tooltip": false,
     },
     "network": {
         "format-wifi": "  {}",
