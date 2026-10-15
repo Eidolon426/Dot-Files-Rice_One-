@@ -85,7 +85,12 @@ seat seat0 xcursor_theme cursor1 32
 
 # ===================== SCREENSHOTS ===============================
 
-bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
+bindsym Print exec $HOME/.config/grim/screenshot full
+bindsym $mod+Print exec $HOME/.config/grim/screenshot area
+bindsym $mod+Shift+Print exec $HOME/.config/grim/screenshot window;
+bindsym Ctrl+Print exec screenshot full-clipboard
+bindsym Ctrl+Super+Print exec screenshot area-clipboard
+bindsym Ctrl+Alt+Print exec screenshot window-clipboard
 
 # ======================= POP-UPS ================================
 for_window [window_role="pop-up"] floating enable
@@ -116,7 +121,7 @@ mode "resize" {
 
     # Return to default mode
     bindsym $mod+Escape mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
-    bindsym $mod+m mode "default"; floating disable; exec notify-send -u low "Default mode enabled" 
+    bindsym $mod+m mode "default"; floating disable; exec notify-send -u low "Default mode enabled"
     # set to low to work as a basic system test for the notify-send command
     bindsym Return mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
     bindsym $mod+Return mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
