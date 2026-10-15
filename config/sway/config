@@ -116,7 +116,8 @@ mode "resize" {
 
     # Return to default mode
     bindsym $mod+Escape mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
-    bindsym $mod+m mode "default"; floating disable; exec notify-send -u low "Default mode enabled"
+    bindsym $mod+m mode "default"; floating disable; exec notify-send -u low "Default mode enabled" 
+    # set to low to work as a basic system test for the notify-send command
     bindsym Return mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
     bindsym $mod+Return mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
     bindsym Escape mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"
