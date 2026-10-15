@@ -2,9 +2,7 @@
     font-family: 'Pixel Code';
     font-size: 20px;
     border-radius: 10px;
-    background: #33003e;
     color: #ff13ff;
-    transition-duration: 0.3s;
 }
 
 window#waybar {
@@ -12,7 +10,11 @@ window#waybar {
 }
 window#waybar>box {
     border: 3px solid #7b007b;
-    padding: 10px;
+    background: #33003e;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 tooltip {
@@ -20,284 +22,329 @@ tooltip {
   border: 3px solid #ff13ff;
 }
 
-#workspaces,
-#tray,
-#scratchpad,
-#custom-notification,
-#custom-file,
-#custom-power,
-#idle_inhibitor,
-#mpris,
-#language,
-#backlight,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#bluetooth,
-#network,
-#clock {
-    background-color: #aa005d;
-    color:#ff93ce;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #ff93ce;
-    padding: 10px;
-}
-#clock:hover {
-    background-color: #770c47;
-    color: #ff93ce;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#battery {
-    background-color: #aa007a;
-    color: #fb72d4;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #fb72d4; 
-}
-#battery.warning {
-    color: #ff8484;
-    border-color: #ff8484;
-    background-color: #640000;
-    font-weight: bold;
-}
-#battery:hover {
-    background-color: #710051;
-    color: #fb72d4;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#backlight {
-    background-color: #aa0091;
-    color:#fe6ee8;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;    
-    border: 2px solid #fe6ee8;
-}
-#backlight:hover {
-    background-color: #6d015d;
-    color: #fe6ee8;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#pulseaudio {
-    background-color: #aa00a7;
-    color: #ff74fd;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #ff74fd; 
-}
-#pulseaudio:hover {
-  background-color: rgb(98, 2, 103);
-  color: #ff74fd;
-  transition-duration: 120ms;
-  text-shadow: 2px 2px #33003e;
-  font-weight: bold;
-}
-
-#bluetooth {
-    background-color: #aa005d;
-    color:#ff93ce;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #ff93ce;
-}
-#bluetooth:hover {
-    background-color: #770c47;
-    color: #ff93ce;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;    
-    font-weight: bold;
-}
-
-#network {
-    background-color:#aa007a;
-    color: #fb72d4;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #fb72d4; 
-}
-#network.disconnected {
-    background-color: #640000;
-    color: #ff8484;
-    font-weight: bold;
-}
-#network:hover {
-    background-color: #710051;
-    color: #fb72d4;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#cpu {
-    background-color: #aa0091;
-    color: #ff63ed;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #ff63ed; 
-}
-#cpu:hover {
-    background-color: #762059;
-    color: #ff63ed;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#memory {
-    background-color: #aa00a7;
-    color: #ff74fd;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #ff74fd; 
-}
-#memory:hover {
-    background-color: rgb(98, 2, 103); 
-    color: #ff74fd;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#language {
-    background-color: #9900aa;
-    color:#f16eff;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #f16eff
-}
-#language:hover {
-    background-color: #51005a; 
-    color: #f16eff;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-
-#mpris {
-  background-color: #850085;
-  color: #ff13ff;
-  text-shadow: 2px 2px #33003e;
-  transition: all 0.2s ease 0s;
-  border: 2px solid #ff13ff; 
-}
-#mpris:hover {
-    background-color: #4f004f;
-    color: #ff13ff;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-#mpris.paused {
-    color: #ef0000;
-    font-weight: bold;
-    border-color: #ef0000;
-    background-color: #4f004f;
-}
-
-#custom-notification {
+menu {
     background-color: #33003e;
-    color: #ff13ff;
-    text-shadow: 2px 2px #33003e;
-    border: none;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-#custom-file {
-    background-color: #33003e;
-    color: #ff13ff;
-    text-shadow: 2px 2px #33003e;
-    border: none;
-}
-
-#custom-power {
-    background-color: #33003e;
-    color: #ff13ff;
-    text-shadow: 2px 2px #33003e;
-    border: none;
-    font-size: 30;
-}
-
-#scratchpad {
-    background-color: #33003e;
-    border: none;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-    color: #ff13ff;
-}
-
-#idle_inhibitor {
-    background-color: #9c00aa;
-    text-shadow: 2px 2px #33003e;
-    transition: all 0.2s ease 0s;
-    border: 2px solid #f678ff;
-    color: #f678ff;
-}
-#idle_inhibitor:hover {
-    background-color: #56005e;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-#idle_inhibitor.activated {
-    background-color: #56005e;
-    color: #00ff00;
-    border: 2px solid #00ff00;
-    transition-duration: 120ms;
-    text-shadow: 2px 2px #33003e;
-    font-weight: bold;
-}
-
-#tray menu {
-    background-color: #2d002d;
     border: 2px solid #ff13ff;
     padding: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
-#tray menu menuitem {
-    border: 2px solid #ff13ff;
+menu menuitem {
+    border: 1px solid #ff13ff;
     margin: 4px;
     padding: 4px;
-    opacity: .85;
+    text-shadow: 2px 2px #33003e;
+    background-color: #2d002d;
 }
-#tray menu menuitem:hover {
-    opacity: 100;
+menu menuitem:hover {
     font-weight: bold;
-}
-#tray {
-    background-color: transparent;
-    border: none;
+    background-color: #7b007b;
 }
 
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#custom-file,
+#custom-notification,
+#custom-power,
+#idle_inhibitor,
+#language,
+#memory,
+#mpris,
+#network,
+#pulseaudio,
+#scratchpad,
+#temperature,
+#tray,
+#workspaces,
+#backlight {
+background-color: #aa0091;
+color:#fe6ee8;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #fe6ee8;
+padding: 2px;
+padding-left: 8px;
+padding-right: 8px;
+margin-top: 2px;
+margin-bottom: 2px;
+}
+#backlight:hover {
+background-color: #6d015d;
+color: #fe6ee8;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#battery {
+background-color: #aa007a;
+color: #fb72d4;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #fb72d4;
+}
+#battery.warning {
+color: #ff8484;
+border-color: #ff8484;
+background-color: #640000;
+font-weight: bold;
+}
+#battery:hover {
+background-color: #710051;
+color: #fb72d4;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#bluetooth {
+background-color: #aa005d;
+color:#ff93ce;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #ff93ce;
+margin-right: 3px;
+}
+#bluetooth:hover {
+background-color: #770c47;
+color: #ff93ce;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#clock {
+background-color: #aa005d;
+color:#ff93ce;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #ff93ce;
+margin-right: 3px;
+}
+#clock:hover {
+background-color: #770c47;
+color: #ff93ce;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#cpu {
+background-color: #aa0091;
+color: #ff63ed;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #ff63ed;
+}
+#cpu:hover {
+background-color: #762059;
+color: #ff63ed;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#custom-file {
+background-color: #33003e;
+color: #ff13ff;
+text-shadow: 2px 2px #33003e;
+border: none;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#custom-notification {
+background-color: #33003e;
+color: #ff13ff;
+text-shadow: 2px 2px #33003e;
+border: none;
+font-weight: bold;
+font-size: 25px;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#custom-power {
+background-color: #33003e;
+color: #ff13ff;
+text-shadow: 2px 2px #33003e;
+border: none;
+font-size: 30;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#idle_inhibitor {
+background-color: #9c00aa;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #f678ff;
+color: #f678ff;
+padding-left: 1px;
+padding-right: 1px;
+}
+#idle_inhibitor:hover {
+background-color: #56005e;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+#idle_inhibitor.activated {
+background-color: #56005e;
+color: #00ff00;
+border: 1.5px solid #00ff00;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#language {
+background-color: #8f09aa;
+color:#f16eff;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #f16eff
+}
+#language:hover {
+background-color: #51005a;
+color: #f16eff;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#memory {
+background-color: #aa00a7;
+color: #ff74fd;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #ff74fd;
+}
+#memory:hover {
+background-color: rgb(98, 2, 103);
+color: #ff74fd;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#mpris {
+background-color: #850085;
+color: #ff13ff;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #ff13ff;
+margin-left: 5px;
+}
+#mpris:hover {
+background-color: #4f004f;
+color: #ff13ff;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+#mpris.paused {
+color: #ef0000;
+font-weight: bold;
+border-color: #ef0000;
+background-color: #4f004f;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#network {
+background-color:#aa007a;
+color: #fb72d4;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #fb72d4;
+}
+#network.disconnected {
+background-color: #640000;
+color: #ff8484;
+font-weight: bold;
+}
+#network:hover {
+background-color: #710051;
+color: #fb72d4;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#pulseaudio {
+background-color: #aa00a7;
+color: #ff74fd;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #ff74fd;
+}
+#pulseaudio:hover {
+background-color: rgb(98, 2, 103);
+color: #ff74fd;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#scratchpad {
+background-color: #33003e;
+border: none;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+color: #ff13ff;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#temperature {
+background-color: #9900aa;
+color: #f16eff;
+text-shadow: 2px 2px #33003e;
+transition: all 0.2s ease 0s;
+border: 1.5px solid #f16eff;
+}
+#temperature:hover {
+background-color: #4f004f;
+color: #f16eff;
+transition-duration: 120ms;
+text-shadow: 2px 2px #33003e;
+font-weight: bold;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+#tray {
+background-color: transparent;
+border: none;
+}
+/* -------------------------------------------------------------------------------------------- */
+
 #workspaces {
-    background-color: #33003e;
-    border: none;
-    font-weight: bold;
-    color: #740864;
+background-color: #33003e;
+border: none;
+font-weight: bold;
+color: #740864;
 }
 #workspaces button {
-    all: initial;
-    font-weight: bold;
-    color: #740864;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-shadow: 2px 2px #120016;
+all: initial;
+font-weight: bold;
+color: #740864;
+padding-left: 10px;
+padding-right: 10px;
+text-shadow: 2px 2px #120016;
 }
 #workspaces button.focused{
-    color:#740864;
-    font-weight: bold;
-    text-shadow: 3px 3px #120016;
+color:#740864;
+font-weight: bold;
+text-shadow: 3px 3px #120016;
 }
 #workspaces button.urgent {
-    color: #640000;
+color: #640000;
 }
