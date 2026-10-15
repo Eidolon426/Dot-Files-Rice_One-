@@ -1,0 +1,10 @@
+[Default]
+save_dir=$HOME/Pictures/Swappy
+save_filename_format=swappy-%Y%m%d-%Hh%Mm%Ss.png
+show_panel=false
+line_size=5
+text_size=20
+text_font=Pixel Code
+paint_mode=brush
+early_exit=false
+fill_shape=false
