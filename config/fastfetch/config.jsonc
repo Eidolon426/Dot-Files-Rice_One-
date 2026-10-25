@@ -2,12 +2,17 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
 	    "source": "~/.config/fastfetch/heart.txt",
+	    "color": {
+            "1": "38;2;179;18;109"
+	    },
 		"padding": {
 			"top": 2,
 		},
     },
   "modules": [
    "break",
+        "break",
+        "break",
         "break",
         "break",
 
@@ -19,18 +24,21 @@
 
         {
             "type": "os",
-            "key": " ",
-			"format": "OS   | {} {}",
+            "key": "OS   ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{} {}",
         },
         {
             "type": "kernel",
-            "key": " ",
-			"format": "KERN | {} {}",
+            "key": "KERN ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{} {}",
         },
         {
             "type": "packages",
-            "key": " ",
-			"format": "PKGC | {}",
+            "key": "PKGC ",
+            "keyColor": "38;2;172;0;172",
+			"format": "",
         },
 
         {
@@ -41,44 +49,52 @@
 
         {
             "type": "shell",
-            "key": " ",
-			"format": "SH   | {}",
+            "key": "SH   ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{}",
         },
         {
             "type": "terminal",
-            "key": " ",
-			"format": "TERM | {}",
+            "key": "TERM ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{}",
         },
         {
             "type": "wm",
-            "key": " ",
-			"format": "WM   | {}",
+            "key": "WM   ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{}",
         },
         {
             "type": "uptime",
-            "key": " ",
-			"format": "UPT  | {2}h {3}m",
+            "key": "UPT  ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{2}h {3}m",
         },
 
 		{
 			"type": "cpu",
-            "key": " ",
-			"format": "CPU  | {}",
+            "key": "CPU  ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{}",
 		},
 		{
 			"type": "gpu",
-            "key": " ",
-			"format": "GPU  | {} {}",
+            "key": "GPU  ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{} {}",
 		},
 		{
 			"type": "memory",
-            "key": " ",
-			"format": "MEM  | {} / {}",
+            "key": "MEM  ",
+            "keyColor": "38;2;172;0;172",
+			"format": "",
 		},
 		{
 			"type": "display",
-            "key": " ",
-			"format": "MNTR | {}x{} {}Hz {6} {7}",
+            "key": "MNTR ",
+            "keyColor": "38;2;172;0;172",
+			"format": "{}x{} {}Hz {6} {7}",
 		},
 
         {
