@@ -36,7 +36,6 @@ bindsym $mod+a exec audacious
 bindsym $mod+r exec '/usr/bin/libreoffice --writer'
 bindsym $mod+q kill
 bindsym $mod+Shift+c $refresh
-bindsym $mod+space floating toggle
 bindsym $mod+h bar mode toggle
 bindsym F11 fullscreen
 bindsym $mod+n exec swaync-client -t -sw
@@ -91,6 +90,7 @@ bindsym $mod+Shift+Print exec $HOME/.config/grim/screenshot window;
 bindsym Ctrl+Print exec screenshot full-clipboard
 bindsym Ctrl+Super+Print exec screenshot area-clipboard
 bindsym Ctrl+Alt+Print exec screenshot window-clipboard
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | swappy -f -
 
 # ======================= POP-UPS ================================
 for_window [window_role="pop-up"] floating enable
@@ -116,6 +116,7 @@ mode "resize" {
     bindsym $mod+Down resize shrink up 20px
     bindsym $mod+Up resize shrink down 20px
     bindsym $mod+Right resize shrink left 20px
+    bindsym $mod+ Right click + drag resize
 
     bindsym $mod+Shift+c mode "default"; floating disable; exec notify-send -u normal "Default mode enabled"; $refresh
 
