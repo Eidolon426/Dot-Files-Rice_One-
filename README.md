@@ -9,3 +9,4 @@ Dependencies
 * Swaync - Notification manager,
 * Swayidle & Swaylock - Idle lock,
 * swappy & grim - screenshots
+* Fastfetch - system info
