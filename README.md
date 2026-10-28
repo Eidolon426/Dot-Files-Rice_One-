@@ -1,4 +1,5 @@
-<img width="1920" height="1080" alt="2026-10-28-14h58m14s" src="https://github.com/user-attachments/assets/8d716781-6807-4b88-8a1b-31a84349b3d0" />
+<img width="1920" height="1080" alt="2026-10-28-15h06m28s" src="https://github.com/user-attachments/assets/a9d9f71e-d02d-4fe8-bbe2-1da30fa89c8f" />
+
 
 Dependencies
 
