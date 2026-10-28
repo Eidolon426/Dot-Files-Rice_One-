@@ -1,4 +1,5 @@
-<img width="1920" height="1080" alt="2026-10-28-12h28m52s" src="https://github.com/user-attachments/assets/ab3ee8fe-0f06-4e66-a654-9850111133ff" />
+<img width="1920" height="1080" alt="2026-10-28-14h58m14s" src="https://github.com/user-attachments/assets/8d716781-6807-4b88-8a1b-31a84349b3d0" />
+
 Dependencies
 
 * LY - Login Manager,
