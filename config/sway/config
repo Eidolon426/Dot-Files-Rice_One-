@@ -23,7 +23,7 @@ set $menu wofi --show drun
 set $media audacious
 
 # ===================== BASIC KEYBINDS ============================
-set $refresh reload; swaync-client --reload-css, swaync-client --reload-config
+set $refresh reload; exec swaync-client --reload-css; exec swaync-client --reload-config
 
 bindsym $mod+Return exec $term
 bindsym $mod+e exec $file_explorer
@@ -129,6 +129,7 @@ mode "resize" {
 }
 bindsym $mod+m mode "resize"; floating toggle; exec notify-send -u normal "Resize mode enabled"
 bindsym $mod+Shift+f floating toggle
+bindsym $mod+Shift+u exec notify-send -u critical "Critical notification test!"
 
 # modifier for moving floating windows
 floating_modifier $mod normal
