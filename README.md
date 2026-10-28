@@ -16,7 +16,5 @@ Dependencies
 
 *<img width="1920" height="1080" alt="2026-10-28-14h39m45s" src="https://github.com/user-attachments/assets/8cfa1dd9-ce15-41d3-81cd-b8a4b88e4e93" />
 
-*<img width="1920" height="1080" alt="2026-10-28-14h41m07s" src="https://github.com/user-attachments/assets/7687e794-90fe-40e2-a137-64baf293ecec" />
-
 *<img width="1920" height="1080" alt="2026-10-28-12h52m42s" src="https://github.com/user-attachments/assets/ccaa5cfc-60f3-413f-850a-c47681a653bf" />
 
