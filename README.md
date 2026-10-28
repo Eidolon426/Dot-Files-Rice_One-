@@ -14,4 +14,8 @@ Dependencies
 * swappy & grim - screenshots
 * Fastfetch - system info
 
-<img width="1920" height="1080" alt="2026-10-28-12h29m03s" src="https://github.com/user-attachments/assets/dc8fb0f2-cead-4ded-8958-f7e4f4a1228f" />
+<img width="1920" height="1080" alt="2026-10-28-12h54m39s" src="https://github.com/user-attachments/assets/8e8c15a3-03f0-4ed5-b1f6-2307f96c5c47" />
+
+
+<img width="1920" height="1080" alt="2026-10-28-12h52m42s" src="https://github.com/user-attachments/assets/ccaa5cfc-60f3-413f-850a-c47681a653bf" />
+
