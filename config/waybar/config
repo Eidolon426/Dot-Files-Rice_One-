@@ -5,72 +5,11 @@
  	   "margin-top": 10,
  	   "margin-left": 20,
  	   "margin-right": 20,
- 	   "id": "bar-0",
- 	   "exclusive": false,
- 	   "ipc": true,
- 	   "mode": "show",
- 	   "spacing": 10,
- 	   "modules-center": ["sway/workspaces"],
-	   "modules-right": ["idle_inhibitor", "pulseaudio", "backlight", "battery", "clock"],
-       "modules-left": ["custom/power", "custom/file", "custom/notification", "sway/scratchpad", "tray",],
+ 	   "id": "bar-1",
+	   "modules-right": ["idle_inhibitor", "custom/arrow2", "pulseaudio", "custom/arrow2", "battery", "custom/arrow2", "clock"],
+       "modules-left": ["custom/power", "custom/file", "custom/notification", "tray", "sway/scratchpad", "custom/arrow", "sway/workspaces"],
 
-	 "sway/window": {
-          "format": "{}",
-          "tooltip": false
-        },
-     "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": false,
-        "tooltip": false,
-        "warp-on-scroll": false,
-        "format": "{icon} {name}",
-        "format-icons": {
-             "urgent": "",
-             "focused": "♥︎",
-             "default": "♡"}
-        },
-     "clock": {
-        "format": "󰅐 {:L%I:%M %a %m/%d}",
-        "locale": "",
-        "justify": "center",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-        "mode"          : "month",
-        "mode-mon-col"  : 3,
-        "weeks-pos"     : "right",
-        "on-scroll"     : 1,
-        "on-click-right": "mode",
-        "format": {
-            "months":     "<span color='#ff00ff'><b>{}</b></span>",
-            "days":       "<span color='#ff55ff'><b>{}</b></span>",
-            "weeks":      "<span color='#aa007f'><b>W{}</b></span>",
-            "weekdays":   "<span color='#ff00ff'><b>{}</b></span>",
-            "today":      "<span color='#aa007f'><b><u>{}</u></b></span>"}
-        }
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": " ",
-            "deactivated": " "
-            },
-        "min-length": 4
-    },
-    "pulseaudio": {
-        "max-volume": 150,
-        "format": "{icon} {volume}%",
-        "format-icons": [
-           "",
-           "",
-           ""],
-        "nospacing": 1,
-        "format-muted": " ",
-        "on-click": "pavucontrol",
-        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "tooltip": false,
-	    "scroll-step": 3
-     },
-     "battery": {
+    "battery": {
 	 "bat": "BAT0",
         "states": {
             "warning": 30},
@@ -86,27 +25,57 @@
             "󱊢",
             "󱊣"]
      },
-     "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""],
+     "clock": {
+        "format": "󰅐 {:L%I:%M %a %m/%d}",
+        "locale": "",
+        "justify": "center",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+            "format": {
+                "months":     "<span color='#ff00ff'><b>{}</b></span>",
+                "days":       "<span color='#ff55ff'><b>{}</b></span>",
+                "weeks":      "<span color='#aa007f'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ff00ff'><b>{}</b></span>",
+                "today":      "<span color='#aa007f'><b><u>{}</u></b></span>"}
+        }
+    },
+    "custom/arrow": {
+        "format": "⟫",
         "tooltip": false,
-        "scroll-step": 3,
     },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "format-icons": "✦",
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}",
+    "custom/arrow2": {
+        "format": "⟪",
+        "tooltip": false,
     },
-    "tray": {
-        "expand": true,
-        "show-passive-items": true,
-        "icon-size": 20,
-        "spacing": 26,
+    "custom/file": {
+        "format": "☰",
+        "min-length": 1,
+        "tooltip": false,
+        "justify": "center",
+        "menu-file": "/$HOME/.config/waybar/file_menu.xml",
+        "menu": "on-click",
+        "menu-actions": {
+            "Simons Library": "nemo /$HOME/Desktop/simons-library",
+            "Downloads": "nemo /$HOME/Downloads",
+            "Screenshots": "nemo /$HOME/Pictures/Screenshots",
+            "Home": "nemo /$HOME",
+            "Root": "nemo /",
+            "Config": "nemo /$HOME/.config",
+            "Local": "nemo /$HOME/.local",
+            "Waybar": "nemo /$HOME/.config/waybar",
+            "Sway": "nemo /$HOME/.config/sway",
+            "Waybar Config": "kate /$HOME/.config/waybar/config",
+            "Sway Config": "kate /$HOME/.config/sway/config",
+            "Update": "kate /$HOME/.local/logs/updates.txt"
+        },
     },
     "custom/power": {
-        "format": " ⏻",
+        "format": "⏻",
         "min-length": 1,
         "tooltip": false,
         "justify": "center",
@@ -120,34 +89,13 @@
             "Update": "kitty sudo /$HOME/.config/waybar/updates.sh"
         },
     },
-    "custom/file": {
-        "format": "☰",
-        "min-length": 1,
-        "tooltip": false,
-        "justify": "center",
-        "menu-file": "/$HOME/.config/waybar/file_menu.xml",
-        "menu": "on-click",
-        "menu-actions": {
-            "Simons Library": "nemo /$HOME/Desktop/simons-library",
-            "Downloads": "nemo /$HOME/Downloads",
-            "Home": "nemo /$HOME",
-            "Root": "nemo /",
-            "Config": "nemo /$HOME/.config",
-            "Local": "nemo /$HOME/.local",
-            "Waybar": "nemo /$HOME/.config/waybar",
-            "Sway": "nemo /$HOME/.config/sway",
-            "Waybar Config": "kate /$HOME/.config/waybar/config",
-            "Sway Config": "kate /$HOME/.config/sway/config",
-            "Update": "kate /$HOME/.local/logs/updates.txt"
-        },
-    },
     "custom/notification": {
         "tooltip": false,
         "min-length": 1,
         "justify": "center",
         "format": "{icon}",
         "format-icons": {
-            "notification": "˗ˋˏ♥︎<span foreground='red'><sup></sup></span>ˎˊ˗",
+            "notification": "<span foreground='red'>♥︎</span>",
             "none": "‎♡",
             "dnd-notification": "<span foreground='red'><sup></sup></span>",
             "dnd-none": "",
@@ -161,7 +109,57 @@
         "exec": "swaync-client -swb",
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
-        "escape": true},
+        "escape": true
+        },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": " ",
+            "deactivated": " "
+            },
+        "min-length": 2
+    },
+    "pulseaudio": {
+        "max-volume": 150,
+        "format": "{icon} {volume}%",
+        "format-icons": [
+           "",
+           "",
+           ""],
+        "nospacing": 1,
+        "format-muted": " ",
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "tooltip": false,
+	    "scroll-step": 3
+     },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "format-icons": "✦",
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}",
+    },
+     "sway/window": {
+          "format": "{}",
+          "tooltip": false
+        },
+     "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "tooltip": false,
+        "warp-on-scroll": false,
+        "format": "{icon} {name}",
+        "format-icons": {
+             "urgent": "<span foreground='red'></span>",
+             "focused": "♥︎",
+             "default": "‎♡"}
+        },
+    "tray": {
+        "expand": true,
+        "show-passive-items": true,
+        "icon-size": 23,
+        "spacing": 15,
+    },
 },
 // ------------------------------------------------------------------------------ //
     {
@@ -170,39 +168,19 @@
     "margin-left": 20,
     "margin-right": 20,
     "margin-bottom": 10,
-    "spacing": 10,
     "id": "bar-0",
     "mode": "hide",
     "ipc": true,
     "exclusive": false,
     "modules-left": ["mpris"],
-    "modules-right": ["sway/language", "temperature", "memory", "cpu", "network", "bluetooth"],
+    "modules-right": ["sway/language", "custom/arrow3", "backlight", "custom/arrow3", "temperature", "custom/arrow3", "memory", "custom/arrow3", "cpu", "custom/arrow3", "network", "custom/arrow3", "bluetooth"],
 
-    "cpu": {
-        "format": "CPU {usage}%",
-	    "format-alt": "{load}% Load",
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip": false,
-        "interval": 30,
-        "on-click-right": "kitty -e btop",
-    },
-    "memory": {
-        "format": "Memory {}%",
-        "interval": 30,
-        "justify": "center",
-        "tooltip": false
-    },
-    "temperature": {
-        "thermal-zone": 2,
-        "format": "{temperatureF}°F {icon}",
-        "format-icons": ["󰉬", "", "󰉪"],
-        "tooltip": false,
-    },
-    "network": {
-        "format-wifi": "  {}",
-    	"format-alt": "  ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
-        "format-disconnected": "󰤮 No Network",
-        "tooltip": false,
-        "interval": 5
+        "scroll-step": 3,
     },
     "bluetooth":{
         "format": "ᚼᛒ {status}",
@@ -215,6 +193,23 @@
 	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 	    "on-click-right": "Bluetooth_Manager -e",
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+	    "format-alt": "{load}% Load",
+        "tooltip": false,
+        "interval": 30,
+        "on-click-right": "kitty -e btop",
+    },
+    "custom/arrow3": {
+        "format": "⟪",
+        "tooltip": false,
+    },
+    "memory": {
+        "format": "Memory {}%",
+        "interval": 30,
+        "justify": "center",
+        "tooltip": false
     },
     "mpris": {
  	    "format": "{status_icon} {artist} {status_icon} {album} - <i>{title}</i> {status_icon}",
@@ -230,11 +225,24 @@
 		    "paused": "♡"},
         "ignored-players": ["firefox"]
     },
+    "network": {
+        "format-wifi": "  {}",
+    	"format-alt": "  ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+        "format-disconnected": "󰤮 No Network",
+        "tooltip": false,
+        "interval": 5
+    },
     "sway/language": {
 		"format": "  {}",
 		"min-length": 5,
 		"on-click": "swaymsg 'input * xkb_switch_layout next'",
     	"tooltip": false,
 	},
+    "temperature": {
+        "thermal-zone": 2,
+        "format": "{temperatureF}°F {icon}",
+        "format-icons": ["󰉬", "", "󰉪"],
+        "tooltip": false,
+    },
    },
 ]
