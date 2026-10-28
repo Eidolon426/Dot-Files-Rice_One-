@@ -144,25 +144,26 @@
   margin-right: 14px;
 }
 .notification.critical {
-  background-color: #550000;
-  box-shadow: 1px 1px 6px 3px #2d002d;
+  background-color: #8a0407;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px 3px #2d002d;
 }
 .notification.critical:hover {
-  background-color: #cb0000;
+  background-color: #5e0000;
   box-shadow: inset 1px 1px 6px #2d002d;
 }
 .notification.normal {
-  background-color: #2d002d;
-  border: 6px solid #7b007b;
+  background-color: #33003e;
+  border: 3px solid #ff13ff;
   box-shadow: 1px 1px 6px 3px #340034;
 }
 .notification.normal:hover {
-  background-color: #190019;
+  background-color: #620062;
   box-shadow: inset 1px 1px 6px #640064;
 }
 .notification {
-  background: #7b007b;
-  border: 6px solid #ff13ff;
+  background: #2d002d;
+  border: 3px solid #ff13ff;
     box-shadow: 1px 1px 6px 3px #2d002d;
 }
 .notification:hover {
