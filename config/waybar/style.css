@@ -67,7 +67,8 @@ padding-left: 8px;
 padding-right: 8px;
 }
 #battery.warning {
-background-color: #640000;
+color: red;
+text-shadow: 2px 2px #550000;
 font-weight: bold;
 }
 #battery:hover {
