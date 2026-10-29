@@ -29,7 +29,7 @@
    border: 3px solid #ff13ff;
  }
  .close-button:hover {
-   background: #d10000;
+   background: #510205;
  }
  /* ----------------------------- Widgets ------------------------------------------------- */
 .widget-mpris,
@@ -113,21 +113,21 @@
   background-color: #620062;
 }
 .notification-group.collapsed:hover .notification-row:not(:only-child) .notification.critical {
-  background-color: #cb0000;
+  background-color: #5e0000;
 }
 .notification-group-collapse-button {
   background: #2d002d;
   border: 3px solid #ff13ff;
 }
 .notification-group-close-all-button {
-  background: #550000;
+  background: #6b0306;
   border: 3px solid #ff13ff;
 }
 .notification-group-collapse-button:hover {
   background: #7b007b;
 }
 .notification-group-close-all-button:hover {
-  background: #cb0000;
+  background: #510205;
 }
 /* ----------------------------- Notifications ------------------------------------------ */
 .floating-notifications .notification-row {
@@ -144,7 +144,7 @@
   margin-right: 14px;
 }
 .notification.critical {
-  background-color: #8a0407;
+  background-color: #6b0306;
   font-weight: bold;
   box-shadow: 2px 2px 6px 3px #2d002d;
 }
