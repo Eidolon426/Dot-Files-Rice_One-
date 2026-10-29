@@ -13,6 +13,8 @@ Dependencies
 * Swayidle & Swaylock - Idle lock,
 * swappy & grim - screenshots
 * Fastfetch - system info
+* network-manager, nm-connection-editor, network-manager-applet - network manager and interface
+* bluetui - bluetooth manager
 
 *<img width="1920" height="1080" alt="2026-10-28-12h54m39s" src="https://github.com/user-attachments/assets/8e8c15a3-03f0-4ed5-b1f6-2307f96c5c47" />
 
