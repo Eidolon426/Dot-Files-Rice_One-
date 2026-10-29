@@ -27,22 +27,10 @@
      },
      "clock": {
         "format": "󰅐 {:L%I:%M %a %m/%d}",
+        "on-click": "rencal",
         "locale": "",
         "justify": "center",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode"          : "month",
-            "mode-mon-col"  : 3,
-            "weeks-pos"     : "right",
-            "on-scroll"     : 1,
-            "on-click-right": "mode",
-            "format": {
-                "months":     "<span color='#ff00ff'><b>{}</b></span>",
-                "days":       "<span color='#ff55ff'><b>{}</b></span>",
-                "weeks":      "<span color='#aa007f'><b>W{}</b></span>",
-                "weekdays":   "<span color='#ff00ff'><b>{}</b></span>",
-                "today":      "<span color='#aa007f'><b><u>{}</u></b></span>"}
-        }
+        "tooltip": false,
     },
     "custom/arrow": {
         "format": "⟫",
