@@ -127,7 +127,7 @@
            "",
            ""],
         "nospacing": 1,
-        "format-muted": " ",
+        "format-muted": "⦸",
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "tooltip": false,
@@ -192,7 +192,7 @@
 	    "format-disabled": "",
 	    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	    "on-click-right": "Bluetooth_Manager -e",
+	    "on-click": "kitty -e bluetui",
     },
     "cpu": {
         "format": "CPU {usage}%",
@@ -227,10 +227,18 @@
     },
     "network": {
         "format-wifi": "  {}",
-    	"format-alt": "  ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
         "format-disconnected": "󰤮 No Network",
-        "tooltip": false,
-        "interval": 5
+        "format-disabled": "󰤮 Wifi Disabled",
+        "tooltip-format": "  ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}\n\nSignal Strength ({signalStrength}%)",
+        "interval": 5,
+        "menu": "on-click",
+        "menu-file": "/$HOME/.config/waybar/network.xml",
+        "menu-actions": {
+            "Connection Interface": "nm-connection-editor",
+            "Wifi On": "nmcli radio wifi on",
+            "Wifi Off": "nmcli radio wifi off",
+            "NM-Applet": "nm-applet",
+        },
     },
     "sway/language": {
 		"format": "  {}",
