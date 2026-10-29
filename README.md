@@ -12,6 +12,7 @@ Dependencies
 * Swaync - Notification manager,
 * Swayidle & Swaylock - Idle lock,
 * swappy & grim - screenshots
+* Rencal - Calendar
 * Fastfetch - system info
 * network-manager, nm-connection-editor, network-manager-applet - network manager and interface
 * bluetui - bluetooth manager
