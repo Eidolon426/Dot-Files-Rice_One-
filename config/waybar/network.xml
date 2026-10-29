@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="Connection Interface">
+                <property name="label">Connection Interface</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Wifi On">
+                <property name="label">Wifi On</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="Wifi Off">
+                <property name="label">Wifi Off</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="NM-Applet">
+                <property name="label">NM-Applet</property>
+            </object>
+        </child>
+    </object>
+</interface>
