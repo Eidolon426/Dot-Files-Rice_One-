@@ -308,6 +308,8 @@ color: #ff13ff;
 text-shadow: 2px 2px #33003e;
 border: 1.5px solid #ff13ff;
 margin-left: 5px;
+padding-left: 8px;
+padding-right: 8px;
 }
 #mpris:hover {
 background-color: #710051;
